@@ -1,0 +1,5 @@
+set se1 [atomselect top "protein and alpha"]
+set se2 [$se1 get {phi psi}]
+set file_txt [open phi_psi.txt w]
+puts $file_txt $se2
+close $file_txt

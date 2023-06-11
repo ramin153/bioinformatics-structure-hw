@@ -1,0 +1,33 @@
+set amino_acids {ALA ARG ASN ASP CYS GLN GLU GLY HIS ILE LEU LYS MET PHE PRO SER THR TRP TYR VAL}
+ 
+puts "amino acid names :[[atomselect 0 "alpha" frame 0] get {resname}]"
+foreach amino_acid $amino_acids {
+    set sel [atomselect 0 "alpha and resname $amino_acid" frame 0]
+    set count [$sel num]
+    $sel delete
+    puts "Number of $amino_acid residues: $count"
+}
+
+
+result:
+amino acid names :GLY SER ASP PRO GLU SER SER ILE PHE ILE GLU ASP ALA ILE LYS TYR PHE LYS GLU LYS VAL SER THR GLN ASN LEU LEU LEU LEU LEU THR ASP ASN GLU ALA TRP ASN GLY PHE VAL ALA ALA ALA GLU LEU PRO ARG ASN GLU ALA ASP GLU LEU ARG LYS ALA LEU ASP ASN LEU ALA ARG GLN MET ILE MET LYS ASP LYS ASN TRP HIS ASP LYS GLY GLN GLN TYR ARG ASN TRP PHE LEU LYS GLU PHE PRO ARG LEU LYS SER GLU LEU GLU ASP ASN ILE ARG ARG LEU ARG ALA LEU ALA ASP GLY VAL GLN LYS VAL HIS LYS GLY THR
+Number of ALA residues: 10
+Number of ARG residues: 8
+Number of ASN residues: 8
+Number of ASP residues: 9
+Number of CYS residues: 0
+Number of GLN residues: 5
+Number of GLU residues: 10
+Number of GLY residues: 5
+Number of HIS residues: 2
+Number of ILE residues: 5
+Number of LEU residues: 14
+Number of LYS residues: 11
+Number of MET residues: 2
+Number of PHE residues: 5
+Number of PRO residues: 3
+Number of SER residues: 5
+Number of THR residues: 3
+Number of TRP residues: 3
+Number of TYR residues: 2
+Number of VAL residues: 4
